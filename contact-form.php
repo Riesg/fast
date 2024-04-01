@@ -7,16 +7,16 @@ $comments=$_POST['comments'];
 if(isset($name) && isset($emailHelp) && isset($phone))
 {
 	global $to_email,$vpb_message_body,$headers;
-	$to_email="hadiya.jamil@devbunch.com";
-	$vpb_message_body = nl2br("Dear Admin,\n
-	The user whose detail is shown below has sent this message from ".$_SERVER['HTTP_HOST']." dated ".date('d-m-Y').".\n
+	$to_email="fastwaylogistica@outlook.com";
+	$vpb_message_body = nl2br("Caro Admin,\n
+	O usuário cujos detalhes são mostrados abaixo enviou esta mensagem de ".$_SERVER['HTTP_HOST']." dated ".date('d-m-Y').".\n
 	
-	Name: ".$name."\n
-	Email Address: ".$emailHelp."\n
-	Phone: ".$phone."\n
-	Message: ".$comments."\n
+	Nome: ".$name."\n
+	Email : ".$emailHelp."\n
+	Telefone: ".$phone."\n
+	Menssagem: ".$comments."\n
 	User Ip:".getHostByName(getHostName())."\n
-	Thank You!\n\n");
+	Obrigado!\n\n");
 	
 	//Set up the email headers
     $headers    = "From: $name <$emailHelp>\r\n";
@@ -25,22 +25,22 @@ if(isset($name) && isset($emailHelp) && isset($phone))
    
 	 if(@mail($to_email, $vpb_message_body, $headers))
 		{
-			$status='Success';
+			$status='Sucesso';
 			//Displays the success message when email message is sent
-			$output="Congrats ".$name.", your email message has been sent successfully! We will get back to you as soon as possible. Thanks.";
+			$output="Congrats ".$name.", sua mensagem de e-mail foi enviada com sucesso! Entraremos em contato com você o mais breve possível. Obrigado.";
 		} 
 		else 
 		{
 			$status='error';
 			 //Displays an error message when email sending fails
-			$output="Sorry, your email could not be sent at the moment. Please try again or contact this website admin to report this error message if the problem persist. Thanks.";
+			$output="Desculpe, não foi possível enviar seu e-mail no momento. Tente novamente ou entre em contato com o administrador do site para relatar esta mensagem de erro se o problema persistir. Obrigado.";
 		}	
 }
 else
 {
 	echo $name;
 	$status='error';
-	$output="please fill require fields";
+	$output="preencha os campos obrigatórios";
 }
 
 echo json_encode(array('status'=> $status, 'msg'=>$output));
