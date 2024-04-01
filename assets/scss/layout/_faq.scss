@@ -1,0 +1,89 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Faq CSS
+----------------------------------------*/
+.faq-content{
+    padding-right: 30px;
+    @include breakpoint (md){
+        padding-right: 0;
+    }
+    .section-heading{
+        margin-bottom: 20px;
+        .section-title{
+            max-width: 470px;
+            width: 100%;
+        }
+    }
+    .accordion-item{
+        border: none;
+        box-shadow: 0px 3px 15px 0px rgba(15, 27, 36, 0.10);
+        &:not(:last-of-type){
+            margin-bottom: 15px;
+        }
+        .accordion-header{
+            border: none;
+            box-shadow: none;
+            .accordion-button{
+                font-size: 20px;
+                font-weight: 600;
+                padding: 20px;
+                @include breakpoint(sm){
+                    font-size: 18px;
+                }
+                &:focus{
+                    background-color: transparent;
+                    box-shadow: none;
+                    border: none;
+                }
+                &:after{
+                    background-image: none;
+                    font-family: "Font Awesome 6 Pro";
+                    content: "\2b";
+                    height: auto;
+                    width: auto;
+                    font-weight: 400;
+                    transform: rotate(0);
+                }
+                &:not(.collapsed) {
+                    color: var(--lt-color-theme-primary);
+                    background-color: transparent;
+                    box-shadow: none;
+                    &:after{
+                        background-image: none;
+                        font-family: "Font Awesome 6 Pro";
+                        content: "\f068";
+                        height: auto;
+                        width: auto;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .accordion-body{
+            max-width: 450px;
+            width: 100%;
+            padding-top: 0;
+            @include breakpoint(sm){
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.faq-img{
+    height: 100%;
+    padding-left: 30px;
+    @include breakpoint(md){
+        padding-left: 0;
+    }
+    img{
+        height: 100%;
+        @include breakpoint(md){
+            width: 100%;
+        }
+    }
+}
+
+
+/* !END: Theme Faq CSS */

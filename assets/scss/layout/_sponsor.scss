@@ -1,0 +1,66 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Sponsor CSS
+----------------------------------------*/
+.sponsor-carousel{
+    padding: 30px 0;
+    border-top: 1px solid var(--lt-color-border-1);
+    border-bottom: 1px solid var(--lt-color-border-1);
+}
+
+.sponsor-item {
+    text-align: center;
+    opacity: 0.7;
+    img {
+        max-width: 180px;
+    }
+    @include breakpoint(md) {
+        text-align: center;
+    }
+}
+
+// Sponsor 2
+
+.sponsor-2{
+    padding: 70px 0;
+    @include breakpoint(md){
+        padding: 50px 0;
+    }
+    .sponsor-item {
+        position: relative;
+        overflow: hidden;
+        opacity: 1;
+        padding: 0px 30px 0px 30px;
+        img{
+            max-width: 100%;
+            height: 70px;
+        }
+        .sponsor-img-hover{
+            padding: 0px 30px 0px 30px;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-103%);
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all .4s ease;
+            z-index: 1;
+        }
+        .sponsor-img{
+            filter: grayscale(100%);
+            transition: all .4s ease;
+        }
+        &:hover{
+            .sponsor-img-hover{
+                transform: translateY(0);
+            }
+            .sponsor-img{
+                transform: translateY(103%);
+            }
+        }
+    }
+}
+
+
+/* !END: Theme Sponsor CSS */

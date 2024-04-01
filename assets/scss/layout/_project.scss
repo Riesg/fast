@@ -1,0 +1,199 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Project CSS
+----------------------------------------*/
+.project-top{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    @include breakpoint(md){
+        margin-bottom: 30px;
+    }
+    .section-heading{
+        margin-bottom: 0;
+    }
+    .swiper-arrow{
+        @include flex-vertical-center;
+        column-gap: 10px;
+        .swiper-nav{
+            font-size: 18px;
+            height: 50px;
+            width: 50px;
+            @include flex-center;
+            border: 1px solid var(--lt-color-border-2);
+            @include transition (all 0.3s ease-in-out);
+            &:hover{
+                background-color: var(--lt-color-theme-primary);
+                color: var(--lt-color-common-white);
+            }
+        }
+    }
+}
+
+.project-carousel-wrap{
+    max-width: 1785px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.project-item{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .project-img{
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .project-btn{
+        background-color: var(--lt-color-common-white);
+        color: var(--lt-color-common-black);
+        font-size: 25px;
+        width: 70px;
+        height: 70px;
+        @include flex-center;
+        position: absolute;
+        top: 30px;
+        left: 20px;
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all 0.3s ease-in-out);
+        &:hover{
+            background-color: var(--lt-color-theme-primary);
+            color: var(--lt-color-common-white);
+        }
+    }
+    &:hover{
+        .project-btn{
+            left: 30px;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    .project-content{
+        position: absolute;
+        bottom: 10px;
+        left: 30px;
+        @include transition(all 0.3s ease-in-out);
+        visibility: hidden;
+        opacity: 0;
+        span{
+            font-family: var(--lt-ff-heading);
+            color: var(--lt-color-common-white);
+            font-size: 16px;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        .title{
+            color: var(--lt-color-common-white);
+            line-height: 1;
+            a{
+                &:hover{
+                    color: var(--lt-color-theme-primary);
+                }
+            }
+        }
+    }
+    &:hover{
+        .project-content{
+            bottom: 30px;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+/* Project 2 */
+
+.project-2{
+    .project-btn{
+        @include flex-center;
+        margin-top: 60px;
+        @include breakpoint(md){
+            margin-top: 30px;
+        }
+    }
+}
+
+.project-carousel-wrap{
+    position: relative;
+    .swiper-nav{
+        background-color: var(--lt-color-common-white);
+        font-size: 18px;
+        color: var(--lt-color-heading-primary);
+        width: 40px;
+        height: 40px;
+        @include flex-center;
+        z-index: 1;
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all 0.3s ease-in-out);
+        &:hover{
+            background-color: var(--lt-color-theme-primary);
+            color: var(--lt-color-common-white);
+        }
+        &.swiper-next{
+            left: auto;
+            right: -10px;
+        }
+    }
+    &:hover{
+        .swiper-nav{
+            visibility: visible;
+            opacity: 1;
+            left: 0;
+            &.swiper-next{
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}
+
+.project-carousel-2{
+    width: 100%;
+    max-width: 1185px;
+    margin: 0 auto;
+    padding: 0 15px;
+    overflow: inherit;
+    .project-item{
+        .project-img{
+            height: 500px;
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .project-content{
+            span{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.portfolio-wrap{
+    .project-item{
+        .project-img{
+            height: 500px;
+            img{
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+/* !END: Theme Project CSS */

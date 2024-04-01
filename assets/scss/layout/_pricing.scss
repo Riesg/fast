@@ -1,0 +1,61 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Pricing CSS
+----------------------------------------*/
+
+.pricing-item {
+    padding: 30px;
+    border: 1px solid var(--lt-color-border-2);
+    @include transition(all 0.3s ease-in-out);
+    .sub-title {
+        color: var(--lt-color-theme-primary);
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    .title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 0;
+        line-height: 1;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid var(--lt-color-border-2);
+        span {
+            color: var(--lt-color-text-body);
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+    }
+    .pricing-list {
+        list-style: none;
+        margin-bottom: 40px;
+        li {
+            font-family: var(--lt-ff-body);
+            font-size: 16px;
+            color: var(--lt-color-text-body);
+            @include flex-vertical-center;
+            @include transition(all 0.3s ease-in-out);
+
+            &:not(:last-of-type) {
+                margin-bottom: 20px;
+            }
+            i {
+                color: var(--lt-color-theme-primary);
+                margin-right: 10px;
+            }
+        }
+    }
+    .pricing-btn{
+        width: 100%;
+        text-align: center;
+    }
+    &:hover{
+        box-shadow: 0px 16px 40px 0px rgba(15, 27, 36, 0.10);
+        border: 1px solid transparent;
+    }
+}
+
+/* !END: Theme Pricing CSS */

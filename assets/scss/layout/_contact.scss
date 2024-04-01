@@ -1,0 +1,104 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Contact CSS
+----------------------------------------*/
+.contact-item{
+    border: 1px solid var(--lt-color-border-1);
+    padding: 40px;
+    .icon{
+        background-color: rgba(254, 86, 36, .10);
+        font-size: 25px;
+        color: var(--lt-color-theme-primary);
+        width: 70px;
+        height: 70px;
+        @include flex-center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .title{
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    .number{
+        font-family: var(--lt-ff-heading);
+        color: var(--lt-color-heading-primary);
+        font-size: 25px;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .contact-btn{
+        background-color: var(--lt-color-grey-1);
+        font-family: var(--lt-ff-heading);
+        font-size: 14px;
+        font-weight: 500;
+        padding: 7px 20px;
+        color: var(--lt-color-heading-primary);
+        &:hover{
+            background-color: var(--lt-color-theme-primary);
+            color: var(--lt-color-common-white);
+        }
+    }
+    &.item-2{
+        background-color: var(--lt-color-heading-primary);
+        .header{
+            color: var(--lt-color-common-white);
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-list{
+            list-style: none;
+            li{
+                color: var(--lt-color-common-white);
+                font-family: var(--lt-ff-heading);
+                font-size: 16px;
+                font-weight: 500;
+                span{
+                    font-size: 16px;
+                    font-family: var(--lt-ff-body);
+                    display: block;
+                    font-weight: 400;
+                }
+                a{
+                    font-size: 16px;
+                    font-family: var(--lt-ff-body);
+                    display: block;
+                    font-weight: 400;
+                }
+                &:not(:last-of-type){
+                    margin-bottom: 20px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid rgba(255, 255, 255, .1);
+                }
+            }
+        }
+    }
+}
+
+.contact-form-area{
+    .section-title{
+        line-height: 1;
+    }
+}
+
+.contact-form{
+    .form-control{
+        box-shadow: none;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid var(--lt-color-border-1);
+        border-radius: 0;
+    }
+    .submit-btn{
+        margin-top: 40px;
+        @include breakpoint(sm){
+            margin-top: 20px;
+        }
+    }
+}
+
+
+/* !END: Theme Contact CSS */

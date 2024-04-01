@@ -1,0 +1,418 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme About CSS
+----------------------------------------*/
+
+.about-section{
+    position: relative;
+    .truck{
+        position: absolute;
+        bottom: 120px;
+        left: 0;
+        @include breakpoint(md){
+            left: auto;
+            right: 100px;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+    .bg-shape{
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top left;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .section-heading{
+        .section-title{
+            @include breakpoint(md){
+                max-width: 450px;
+                width: 100%;
+            }
+            @include breakpoint(sm){
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        p{
+            @include breakpoint(md){
+                max-width: 400px;
+                width: 100%;
+            }
+            @include breakpoint(sm){
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.about-thumb{
+    position: relative;
+    z-index: 1;
+    img{
+        width: 100%;
+    }
+    .video-btn-wrap{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .video-btn{
+            background-color: var(--lt-color-common-white);
+            color: var(--lt-color-common-black);
+            font-size: 30px;
+            width: 100px;
+            height: 100px;
+            @include flex-center;
+            border-radius: 50%;
+            position: relative;
+            img{
+                height: 36px;
+                width: 30px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.about-content{
+    padding-left: 15px;
+    @include breakpoint(md){
+        padding-left: 0;
+    }
+}
+
+.about-items{
+    @include flex-vertical-center;
+    column-gap: 80px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    @include breakpoint(lg){
+        column-gap: 50px;
+    }
+    .about-item{
+        .about-icon{
+            height: 70px;
+            width: 70px;
+            margin: 0 auto;
+            margin-bottom: 12px;
+        }
+        .title{
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.ripple,
+.ripple:before,
+.ripple:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    -ms-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    -o-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    -webkit-animation: rippleOne 3s infinite;
+    -moz-animation: rippleOne 3s infinite;
+    -ms-animation: rippleOne 3s infinite;
+    -o-animation: rippleOne 3s infinite;
+    animation: rippleOne 3s infinite;
+}
+.ripple {
+    z-index: -1;
+    &:before {
+        -webkit-animation-delay: 0.9s;
+        -moz-animation-delay: 0.9s;
+        -ms-animation-delay: 0.9s;
+        -o-animation-delay: 0.9s;
+        animation-delay: 0.9s;
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &:after {
+        -webkit-animation-delay: 0.6s;
+        -moz-animation-delay: 0.6s;
+        -ms-animation-delay: 0.6s;
+        -o-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@-webkit-keyframes rippleOne {
+    70% {
+        box-shadow: 0 0 0 50px rgba(244, 68, 56, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(244, 68, 56, 0);
+    }
+}
+
+@keyframes rippleOne {
+    70% {
+        box-shadow: 0 0 0 50px rgba(244, 68, 56, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(244, 68, 56, 0);
+    }
+}
+
+/* About 2 */
+
+.about-2{
+    padding-bottom: 180px;
+    position: relative;
+    z-index: 1;
+    @include breakpoint(md){
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm){
+        padding-bottom: 50px;
+    }
+    .truck-2{
+        position: absolute;
+        top: -90px;
+        right: 105px;
+        @include breakpoint(md){
+            right: 0;
+            img{
+                max-width: 200px;
+            }
+        }
+        @include breakpoint(md){
+            display: none;
+        }
+    }
+}
+
+.about-img-wrap{
+    position: relative;
+    margin-right: 30px;
+    @include breakpoint(md){
+        margin-right: 0;
+        max-width: 570px;
+        margin: 0 auto;
+    }
+    .about-img{
+        img{
+            max-width: 370px;
+            width: 100%;
+        }
+    }
+    .img-2{
+        max-width: 270px;
+        width: 100%;
+        position: absolute;
+        bottom: -97px;
+        right: 0;
+    }
+    .about-shape{
+        .shape{
+            position: absolute;
+            top: 0;
+            right: 0;
+            &.shape-1{
+                top: auto;
+                bottom: -125px;
+                right: 37%;
+                z-index: -1;
+            }
+            &.shape-2{
+                background-color: var(--lt-color-theme-primary);
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                @include flex-center;
+                top: 70px;
+                right: 115px;
+            }
+            &.shape-3{
+                top: 20px;
+                right: 50px;
+            }
+        }
+    }
+}
+
+.about-info{
+    padding-left: 30px;
+    padding-top: 60px;
+    @include breakpoint(md){
+        padding-left: 0;
+        padding-top: 160px;
+    }
+    .section-heading{
+        p{
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+}
+
+.outports-items{
+    padding-left: 0;
+    &.items-2{
+        margin-bottom: 40px;
+        @include breakpoint(md){
+            grid-template-columns: 1fr;
+            grid-gap: 0;
+        }
+        .outports-item{
+            padding: 0;
+            border: none;
+            &:not(:last-of-type){
+                margin-bottom: 30px;
+            }
+            .outports-info{
+                p{
+                    max-width: 300px;
+                    width: 100%;
+                }
+            }
+            &:hover{
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+/* About 3 */
+.about-3{
+    padding-bottom: 157px;
+    @include breakpoint(md){
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm){
+        padding-bottom: 50px;
+    }
+    .section-heading{
+        margin-bottom: 30px;
+    }
+    .about-thumb{
+        max-width: 470px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        &:before{
+            background-color: transparent;
+            content: "";
+            border: 10px solid var(--lt-color-theme-primary);
+            height: 625px;
+            width: 470px;
+            position: absolute;
+            top: 50px;
+            right: -45px;
+            z-index: -1;
+            @include breakpoint(sm){
+                display: none;
+            }
+        }
+    }
+    .about-content-2{
+        margin-top: 45px;
+        padding-left: 20px;
+        @include breakpoint(lg){
+            padding-left: 40px;
+        }
+        @include breakpoint(md){
+            margin-top: 70px;
+            padding-left: 0;
+        }
+        @include breakpoint(sm){
+            margin-top: 40px;
+        }
+        .about-author-box{
+            @include flex-vertical-center;
+            column-gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            row-gap: 15px;
+            .author-info{
+                @include flex-vertical-center;
+                column-gap: 10px
+            }
+        }
+        .about-box-wrap{
+            background-color: var(--lt-color-common-white);
+            @include flex-vertical-center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            padding: 30px 0;
+            @include breakpoint(lg){
+                display: inline-block;
+            }
+            @include breakpoint(md){
+                @include flex-vertical-center;
+            }
+            @include breakpoint(sm){
+                display: inline-block;
+            }
+            .about-box{
+                padding: 0 30px;
+                .icon{
+                    font-size: 25px;
+                    color: var(--lt-color-theme-primary);
+                    margin-bottom: 15px;
+                }
+                .title{
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                }
+                p{
+                    font-size: 14px;
+                    max-width: 188px;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+                &:nth-child(1){
+                    border-right: 1px solid var(--lt-color-border-1);
+                    @include breakpoint(lg){
+                        border: none;
+                        border-bottom: 1px solid var(--lt-color-border-1);
+                        padding-bottom: 30px;
+                        margin-bottom: 30px;
+                    }
+                    @include breakpoint(md){
+                        border: none;
+                        border-right: 1px solid var(--lt-color-border-1);
+                    }
+                    @include breakpoint(sm){
+                        border: none;
+                        border-bottom: 1px solid var(--lt-color-border-1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* !END: Theme About CSS */

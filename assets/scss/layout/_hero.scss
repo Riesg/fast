@@ -1,0 +1,50 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Hero CSS
+----------------------------------------*/
+.hero-section{
+    @include background;
+    width: 100%;
+    @include flex-vertical-center;
+    @include breakpoint(md){
+        height: auto;
+    }
+}
+
+.hero-content{
+    padding: 315px 0 205px 0;
+    @include breakpoint(lg){
+        padding-left: 50px;
+    }
+    @include breakpoint(md){
+        padding: 100px 0 100px 40px;
+    }
+    @include breakpoint(sm){
+        padding: 70px 20px;
+    }
+    .title{
+        color: var(--lt-color-common-white);
+        font-size: 80px;
+        font-weight: 800;
+        line-height: 1.1;
+        max-width: 610px;
+        width: 100%;
+        margin-bottom: 20px;
+        @include breakpoint(md){
+            font-size: 50px;
+        }
+        @include breakpoint(sm){
+            font-size: 35px;
+        }
+    }
+    p{
+        color: var(--lt-color-common-white);
+        max-width: 500px;
+        width: 100%;
+        margin-bottom: 40px;
+        line-height: 1.7;
+    }
+}
+
+/* !END: Theme Hero CSS */

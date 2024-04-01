@@ -1,0 +1,698 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Slider CSS
+----------------------------------------*/
+.slider-section {
+    overflow: hidden;
+}
+
+.logistec-slider {
+    position: relative;
+    z-index: 2;
+}
+
+.slider-item {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    .slide-img-wrap{
+        height: 950px;
+        @include breakpoint(md){
+            height: 650px;
+        }
+        @include breakpoint(sm){
+            height: 550px;
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+    .slider-content-wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 100%;
+        width: 100%;
+        margin-top: 50px;
+        @include breakpoint(md){
+            margin-top: 0;
+        }
+        .slider-content-inner{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 30px;
+            @include breakpoint(md){
+                padding-right: 50px;
+            }
+            @include breakpoint(sm){
+                flex-direction: column;
+                align-items: baseline;
+                row-gap: 50px;
+            }
+        }
+        .logistec-caption {
+            margin-bottom: 42px;
+            position: relative;
+            z-index: 2;
+            @include breakpoint(md) {
+                margin-bottom: 30px;
+            }
+            &.sub-heading{
+                margin-bottom: 30px;
+            }
+        }
+        .logistec-small-cap{
+            font-family: var(--lt-ff-heading);
+            color: var(--lt-color-common-white);
+            font-size: 18px;
+            font-weight: 600;
+            @include breakpoint(sm){
+                font-size: 16px;
+                max-width: 100%;
+            }
+        }
+        .logistec-cap {
+            font-family: var(--lt-ff-heading);
+            color: var(--lt-color-common-white);
+            font-size: 80px;
+            line-height: 1.15;
+            font-weight: 800;
+            display: block;
+            @include breakpoint(md){
+                font-size: 60px;
+            }
+            @include breakpoint(sm){
+                font-size: 30px;
+                line-height: 1.4;
+                max-width: 100%;
+            }
+        }
+        .slider-video-btn{
+            .video-btn{
+                background-color: var(--lt-color-common-white);
+                position: relative;
+                height: 80px;
+                width: 80px;
+                @include flex-center;
+                border-radius: 50%;
+                @include breakpoint(sm){
+                    width: 60px;
+                    height: 60px;
+                    font-size: 22px;
+                }
+                img{
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+.logistec-swiper-pagination{
+    height: 100%;
+    width: auto !important;
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    left: 50px !important;
+    z-index: 2;
+    @include breakpoint(xl){
+        left: 25px!important;
+    }
+    @media (max-width: 1250px){
+        display: none;
+    }
+    .swiper-pagination-bullet{
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        border-radius: 50%;
+        opacity: 1;
+        display: block;
+        &.swiper-pagination-bullet-active{
+            border: 1px solid var(--lt-color-common-white);
+        }
+        &:before{
+            content: "";
+            background-color: var(--lt-color-common-white);
+            width: 5px;
+            height: 5px;
+            border: 1px solid var(--lt-color-common-white);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:not(:last-of-type){
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/* Slider 2 */
+.slider-2{
+    .slider-item{
+        .slide-img-wrap{
+            height: 830px;
+        }
+        .slider-content-wrap{
+            left: -100px;
+            margin-top: 0;
+            @include breakpoint(xl){
+                left: 0;
+            }
+            .slider-content-inner{
+                @include breakpoint(sm){
+                    padding-right: 0;
+                }
+            }
+            .slider-content{
+                background: linear-gradient(90deg, #0F1B24 0.39%, rgba(15, 27, 36, 0.00) 99.62%);
+                padding: 60px 100px;
+                @include breakpoint(sm){
+                    padding: 50px 30px;
+                }
+                .logistec-caption.heading{
+                    margin-bottom: 20px;
+                }
+                .slider-desc{
+                    margin-bottom: 40px;
+                    p{
+                        color: var(--lt-color-common-white);
+                        max-width: 620px;
+                        width: 100%;
+                        margin-bottom: 0;
+                    }
+                }
+                .slider-btn-wrap{
+                    @include flex-vertical-center;
+                    column-gap: 20px;
+                    flex-wrap: wrap;
+                    row-gap: 10px;
+                    .slider-btn{
+                        .lt-primary-btn{
+                            background-color: transparent;
+                            border: 1px solid rgba(255, 255, 255, 0.3);
+                            &:hover{
+                                border: 1px solid var(--lt-color-heading-primary);
+                            }
+                            &.active{
+                                background-color: var(--lt-color-heading-primary);
+                                border: 1px solid var(--lt-color-heading-primary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .slide-img-wrap{
+            @include breakpoint(sm){
+                height: 650px;
+            }
+        }
+    }
+    .logistec-swiper-pagination{
+        left: auto!important;
+        right: 100px;
+        top: 40%;
+        @media (max-width: 1250px){
+            display: block;
+        }
+        @include breakpoint(md){
+            right: 50px;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+        .swiper-pagination-bullet{
+            background-color: var(--lt-color-common-white);
+            height: 10px;
+            width: 10px;
+            @include transition(all 0.3s ease-in-out);
+            border: none;
+            &:before{
+                display: none;
+            }
+            &.swiper-pagination-bullet-active{
+                background-color: var(--lt-color-theme-primary);
+                height: 20px;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+
+/* Text Animation */
+.logistec-animation,
+.logistec-animation span {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+.logistec-animation span {
+    display: inline-block;
+}
+
+/* Fade Effect */
+.logistec-fadeIn {
+    animation-name: asFadeIn;
+}
+
+@keyframes asFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.logistec-fadeInLeft {
+    animation-name: asFadeInLeft;
+}
+
+@keyframes asFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.logistec-fadeInRight {
+    animation-name: asFadeInRight;
+}
+
+@keyframes asFadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.logistec-fadeInDown {
+    animation-name: asFadeInTop;
+}
+
+@keyframes asFadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.logistec-fadeInUp {
+    animation-name: asFadeInBottom;
+}
+
+@keyframes asFadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Move From Effect */
+.logistec-moveFromLeft {
+    animation-name: asMoveFromLeft;
+}
+
+@keyframes asMoveFromLeft {
+    from {
+        visibility: hidden;
+        transform: translateX(-50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.logistec-moveFromRight {
+    animation-name: asMoveFromRight;
+}
+
+@keyframes asMoveFromRight {
+    from {
+        visibility: hidden;
+        transform: translateX(50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.logistec-moveFromTop {
+    animation-name: asMoveFromTop;
+}
+
+@keyframes asMoveFromTop {
+    from {
+        visibility: hidden;
+        transform: translateY(-50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.logistec-moveFromBottom {
+    animation-name: asMoveFromBottom;
+}
+
+@keyframes asMoveFromBottom {
+    from {
+        visibility: hidden;
+        transform: translateY(50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+/* Blur Effect */
+
+.logistec-blurIn {
+    animation-name: asBlurIn;
+}
+
+@keyframes asBlurIn {
+    from {
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.logistec-blurInLeft {
+    animation-name: asBlurInLeft;
+}
+
+@keyframes asBlurInLeft {
+    from {
+        transform: translateX(50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.logistec-blurInRight {
+    animation-name: asBlurInRight;
+}
+
+@keyframes asBlurInRight {
+    from {
+        transform: translateX(-50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.logistec-blurInTop {
+    animation-name: asBlurInTop;
+}
+
+@keyframes asBlurInTop {
+    from {
+        transform: translateY(50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.logistec-blurInBottom {
+    animation-name: asBlurInBottom;
+}
+
+@keyframes asBlurInBottom {
+    from {
+        transform: translateY(-50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+/* Zoom Effect */
+.logistec-zoomIn {
+    animation-name: asZoomIn;
+}
+
+@keyframes asZoomIn {
+    from {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+.logistec-zoomInLeft {
+    animation-name: asZoomInLeft;
+}
+
+@keyframes asZoomInLeft {
+    from {
+        transform: scale(5) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+.logistec-zoomInRight {
+    animation-name: asZoomInRight;
+}
+
+@keyframes asZoomInRight {
+    from {
+        transform: scale(5) translateX(50%);
+        opacity: 0;
+    }
+}
+
+.logistec-zoomInTop {
+    animation-name: asZoomInTop;
+}
+
+@keyframes asZoomInTop {
+    from {
+        transform: scale(10) translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.logistec-zoomInBottom {
+    animation-name: asZoomInBottom;
+}
+
+@keyframes asZoomInBottom {
+    from {
+        transform: scale(10) translateY(50%);
+        opacity: 0;
+    }
+}
+
+/* Flip Effect */
+.logistec-flipInTop {
+    animation-name: asFlipInTop;
+}
+
+@keyframes asFlipInTop {
+    from {
+        transform: perspective(600px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: perspective(600px) rotateX(180deg);
+        transform-origin: 0 0;
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        transform: perspective(600px);
+    }
+}
+
+.logistec-flipInBottom {
+    animation-name: asFlipInBottom;
+}
+
+@keyframes asFlipInBottom {
+    from {
+        transform: perspective(600px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: perspective(600px) rotateX(180deg);
+        transform-origin: bottom;
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        transform: perspective(600px);
+    }
+}
+
+/* Roll Effect */
+.logistec-rollFromLeft {
+    animation-name: asRollFromLeft;
+}
+
+@keyframes asRollFromLeft {
+    from {
+        transform: translateX(-60px) perspective(600px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+.logistec-rollFromRight {
+    animation-name: asRollFromRight;
+}
+
+@keyframes asRollFromRight {
+    from {
+        transform: translateX(60px) perspective(600px) rotateY(-180deg);
+        opacity: 0;
+    }
+}
+
+.logistec-rollFromTop {
+    animation-name: asRollFromTop;
+}
+
+@keyframes asRollFromTop {
+    from {
+        transform: translateY(-60px) perspective(600px) rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+.logistec-rollFromBottom {
+    animation-name: asRollFromBottom;
+}
+
+@keyframes asRollFromBottom {
+    from {
+        transform: translateY(60px) perspective(600px) rotateX(-180deg);
+        opacity: 0;
+    }
+}
+
+/* Rotate Skate Effect */
+.logistec-rotateSkateInRight {
+    animation-name: asRotateSkateInRight;
+}
+
+@keyframes asRotateSkateInRight {
+    from {
+        transform: scaleX(0.2) translateX(100px);
+        opacity: 0;
+    }
+}
+
+.logistec-rotateSkateInLeft {
+    animation-name: asRotateSkateInLeft;
+}
+
+@keyframes asRotateSkateInLeft {
+    from {
+        transform: scaleX(0.2) translateX(-100px);
+        opacity: 0;
+    }
+}
+
+.logistec-rotateSkateInTop {
+    animation-name: asRotateSkateInTop;
+}
+
+@keyframes asRotateSkateInTop {
+    from {
+        transform: scaleY(0.2) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+.logistec-rotateSkateInBottom {
+    animation-name: asRotateSkateInBottom;
+}
+
+@keyframes asRotateSkateInBottom {
+    from {
+        transform: scaleY(0.2) translateY(100px);
+        opacity: 0;
+    }
+}
+
+/* PopUp Effect */
+.logistec-popUp {
+    animation-name: asPopUp;
+}
+
+@keyframes asPopUp {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        transform: scale(1.1);
+        visibility: visible;
+    }
+}
+
+.logistec-popUpLeft {
+    animation-name: asPopUpLeft;
+}
+
+@keyframes asPopUpLeft {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: visible;
+        transform: translateX(-20px) scale(1.1);
+        animation-timing-function: ease-in;
+    }
+}
+
+.logistec-popUpRight {
+    animation-name: asPopUpRight;
+}
+
+@keyframes asPopUpRight {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: visible;
+        transform: translateX(20px) scale(1.1);
+        animation-timing-function: ease-in;
+    }
+}
+
+/* !END: Theme Slider CSS */

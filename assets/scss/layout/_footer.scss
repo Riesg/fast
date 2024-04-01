@@ -1,0 +1,226 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Footer CSS
+----------------------------------------*/
+
+.footer-section{
+    position: relative;
+    overflow: hidden;
+    .truck{
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: contain;
+        width: 100px;
+        height: 73px;
+        position: absolute;
+        bottom: 50%;
+        right: 80px;
+        transform: translateY(50%);
+        @include breakpoint(xxl){
+            right: 30px;
+        }
+        @include breakpoint(xl){
+            right: 50px;
+            bottom: 20%;
+            transform: translateY(0);
+        }
+        @include breakpoint(lg){
+            display: none;
+        }
+    }
+}
+
+.footer-wrap{
+    border-bottom: 1px solid var(--lt-color-border-1);
+    @include breakpoint(md){
+        padding-bottom: 20px;
+    }
+    @include breakpoint(sm){
+        padding-bottom: 0px;
+    }
+}
+
+.footer-widget{
+    @include breakpoint(md){
+        margin-bottom: 50px;
+    }
+    .footer-logo{
+        img{
+            margin-top: -5px;
+            margin-bottom: 28px;
+            @include breakpoint(md){
+                margin-bottom: 18px;
+            }
+        }
+    }
+    p{
+        margin-bottom: 30px;
+        max-width: 320px;
+        width: 100%;
+    }
+    .footer-social{
+        li{
+            display: inline-flex;
+            &:not(:last-of-type){
+                margin-right: 10px;
+            }
+            a{
+                font-size: 15px;
+                color: var(--lt-color-heading-primary);
+                width: 35px;
+                height: 35px;
+                @include flex-center;
+                border: 1px solid var(--lt-color-border-1);
+                &:hover{
+                    background-color: var(--lt-color-theme-primary);
+                    color: var(--lt-color-common-white);
+                    border: 1px solid var(--lt-color-theme-primary);
+                }
+            }
+        }
+    }
+    .widget-header{
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 35px;
+        line-height: 1;
+        @include breakpoint(md){
+            margin-bottom: 25px;
+        }
+    }
+    .widget-list{
+        list-style: none;
+        li{
+            color: var(--lt-color-text-body);
+            font-size: 16px;
+            font-weight: 400;
+            &:not(:last-of-type){
+                margin-bottom: 10px;
+            }
+            a{
+                &:hover{
+                    color: var(--lt-color-theme-primary);
+                }
+            }
+        }
+        &.adress-list{
+            li{
+                display: grid;
+                grid-template-columns: 16px 1fr;
+                align-items: center;
+                grid-gap: 10px;
+                @include breakpoint(lg){
+                    grid-template-columns: 1fr;
+                }
+                @include breakpoint(md){
+                    grid-template-columns: 16px 1fr;
+                }
+                &:nth-child(3){
+                    align-items: baseline;
+                    i{
+                        margin-top: 2px;
+                    }
+                }
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    &.item-2{
+        padding-left: 50px;
+        @include breakpoint(md){
+            padding-left: 0;
+        }
+    }
+}
+
+.copyright-content{
+    @include flex-vertical-center;
+    justify-content: space-between;
+    padding: 30px 0;
+    @include breakpoint(sm){
+        flex-direction: column;
+        row-gap: 10px;
+        justify-content: center;
+    }
+    p{
+        margin-bottom: 0;
+        span{
+            color: var(--lt-color-heading-primary);
+            font-weight: 500;
+        }
+    }
+    .copy-list{
+        li{
+            display: inline-flex;
+            line-height: 1;
+            &:not(:last-of-type){
+                margin-right: 20px;
+            }
+            a{
+                font-size: 16px;
+                &:hover{
+                    color: var(--lt-color-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+/* Footer 2 */
+
+.footer-2{
+    background-color: var(--lt-color-heading-primary);
+    .footer-wrap{
+        border-bottom: 1px solid var(--lt-color-border-3);
+    }
+    .footer-widget{
+        p{
+            color: var(--lt-color-common-white);
+        }
+        .footer-social{
+            li{
+                a{
+                    border: 1px solid var(--lt-color-border-3);
+                    color: var(--lt-color-common-white);
+                }
+            }
+        }
+        .widget-header{
+            color: var(--lt-color-common-white);
+        }
+        .widget-list{
+            li{
+                color: var(--lt-color-common-white);
+                a{
+                    color: var(--lt-color-common-white);
+                    &:hover{
+                        color: var(--lt-color-theme-primary);
+                    }
+                }
+            }
+        }
+    }
+}
+.copyright-content.content-2{
+    p{
+        color: var(--lt-color-common-white);
+        span{
+            color: var(--lt-color-common-white);
+        }
+    }
+    .copy-list{
+        li{
+            a{
+                color: var(--lt-color-common-white);
+                &:hover{
+                    color: var(--lt-color-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+/* !END: Theme Footer CSS */

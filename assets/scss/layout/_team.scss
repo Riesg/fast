@@ -1,0 +1,91 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Team CSS
+----------------------------------------*/
+.team-item{
+    .team-img{
+        overflow: hidden;
+        img{
+            width: 100%;
+            @include transition(all 0.3s ease-in-out);
+        }
+    }
+    .team-content{
+        background-color: var(--lt-color-common-white);
+        padding: 30px;
+        border: 1px solid var(--lt-color-border-2);
+        @include transition(all 0.3s ease-in-out);
+        .title{
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            a{
+                &:hover{
+                    color: var(--lt-color-theme-primary);
+                }
+            }
+            span{
+                font-family: var(--lt-ff-body);
+                color: var(--lt-color-text-body);
+                font-size: 16px;
+                font-weight: 400;
+                display: block;
+                margin-top: 10px;
+            }
+        }
+        .team-social{
+            li{
+                display: inline-flex;
+                &:not(:last-of-type){
+                    margin-right: 10px;
+                }
+                a{
+                    font-size: 13px;
+                    color: var(--lt-color-text-body);
+                    @include flex-center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 1px solid var(--lt-color-border-2);
+                    @include transition(all 0.3s ease-in-out);
+                    &:hover{
+                        background-color: var(--lt-color-theme-primary);
+                        color: var(--lt-color-common-white);
+                        border: 1px solid var(--lt-color-theme-primary);
+                        
+                    }
+                }
+            }
+        }
+    }
+    &:hover{
+        .team-content{
+            background: var(--lt-color-common-white);
+            box-shadow: 0px 16px 40px 0px rgba(15, 27, 36, 0.10);
+            border: 1px solid transparent;
+        }
+        .team-img{
+            img{
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+.team-top{
+    @include flex-vertical-center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    @include breakpoint(md){
+        margin-bottom: 30px;
+    }
+    .section-heading{
+        margin-bottom: 0;
+    }
+}
+
+
+/* !END: Theme Team CSS */

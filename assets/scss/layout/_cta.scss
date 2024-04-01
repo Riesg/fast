@@ -1,0 +1,54 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Cta CSS
+----------------------------------------*/
+.cta-section{
+    background-color: var(--lt-color-heading-primary);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 0;
+    .cta-shape{
+        position: absolute;
+        top: 40px;
+        left: 0;
+    }
+}
+
+.cta-wrap{
+    @include flex-vertical-center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    padding: 92px 0;
+    @include breakpoint(md){
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 72px 0;
+    }
+    .title{
+        font-size: 48px;
+        color: var(--lt-color-common-white);
+        max-width: 670px;
+        width: 100%;
+        margin-bottom: 0;
+        @include breakpoint(sm){
+            font-size: 32px;
+        }
+    }
+    .cta-btn{
+        background-color: var(--lt-color-common-white);
+        color: var(--lt-color-heading-primary);
+        &:before{
+            background-color: var(--lt-color-theme-primary);
+        }
+        &:hover{
+            color: var(--lt-color-common-white);
+        }
+    }
+}
+
+
+/* !END: Theme Cta CSS */

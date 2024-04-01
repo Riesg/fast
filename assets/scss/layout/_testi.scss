@@ -1,0 +1,171 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Testimonal CSS
+----------------------------------------*/
+.testimonial-section{
+    @include background;
+    height: 100%;
+    width: 100%;
+}
+
+.testimonial-carousel{
+    padding-bottom: 80px;
+    @include breakpoint(md){
+        padding-bottom: 50px;
+    }
+    .swiper-pagination{
+        line-height: 1;
+        bottom: 0;
+        .swiper-pagination-bullet{
+            width: 40px;
+            height: 3px;
+            background-color: var(--lt-color-common-white);
+            border-radius: 0;
+            opacity: 1;
+            &.swiper-pagination-bullet-active{
+                background-color: var(--lt-color-theme-primary);
+            }
+        }
+    }
+}
+.testi-item{
+    background-color: var(--lt-color-common-white);
+    padding: 40px 30px;
+    .review{
+        li{
+            color: var(--lt-color-theme-primary);
+            font-size: 18px;
+            display: inline-flex;
+            &:not(:last-of-type){
+                margin-right: 5px;
+            }
+        }
+    }
+    p{
+        font-size: 18px;
+        margin: 20px 0 30px 0;
+        max-width: 350px;
+        width: 100%;
+    }
+    .testi-author{
+        @include flex-vertical-center;
+        column-gap: 15px;
+        img{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+        }
+        .author{
+            font-size: 22px;
+            margin-bottom: 0;
+            span{
+                color: var(--lt-color-text-body);
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 5px;
+                display: block;
+            }
+            a{
+                &:hover{
+                    color: var(--lt-color-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+/* Testi 2 */
+
+.testimonial-carousel-2{
+    padding-bottom: 170px;
+    @include breakpoint(sm){
+        padding-bottom: 140px;
+    }
+    .swiper-pagination{
+        bottom: 0;
+        line-height: 1;
+        .swiper-pagination-bullet{
+            background-color: #c4c4c4;
+            height: 16px;
+            width: 16px;
+            &.swiper-pagination-bullet-active{
+                background-color: var(--lt-color-theme-primary);
+            }
+        }
+    }
+}
+
+.testi-box{
+    padding: 40px;
+    border: 1px solid var(--lt-color-border-2);
+    position: relative;
+    z-index: 1;
+    @include breakpoint(sm){
+        padding: 40px 20px;
+    }
+    p{
+        margin-bottom: 30px;
+    }
+    .author{
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 0;
+        text-transform: capitalize;
+        span{
+            font-family: var(--lt-ff-body);
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+            margin-top: 10px;
+        }
+    }
+    .author-img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -80px;
+        left: 0;
+        z-index: 1;
+        &:before{
+            background-color: var(--lt-color-common-white);
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            content: "";
+            border: 1px solid var(--lt-color-border-2);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: -1;
+            clip-path: inset(0 0 89px 0px);
+        }
+    }
+    .arrow {
+        background-color: var(--lt-color-common-white);
+        border-left: 1px solid var(--lt-color-border-2);
+        position: absolute;
+        bottom: -40px;
+        left: 40%;
+        width: 60px;
+        height: 40px;
+        overflow: hidden;
+        &:before{
+            height: 76px;
+            width: 1px;
+            background-color: var(--lt-color-border-2);
+            content: "";
+            position: absolute;
+            right: 30px;
+            top: -17px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(57deg);
+        }
+    }
+}
+
+
+/* !END: Theme Testimonal CSS */
