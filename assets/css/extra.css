@@ -1201,8 +1201,16 @@
     padding-bottom: 120px;
 }
 
-.pb-120{
 
-	margin-bottom: 120px;
-	clear: both;
+.header.header-transparent {
+	background-color: transparent;
+	position        : relative;
+	top             : 0;
+	left            : 0;
+	width           : 100%;
+	z-index         : 1001;
+}
+
+.header.header-transparent .navbar-brand .logo-dark {
+	display: none;
 }
