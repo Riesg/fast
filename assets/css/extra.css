@@ -1214,3 +1214,59 @@
 .header.header-transparent .navbar-brand .logo-dark {
 	display: none;
 }
+
+
+
+.how-it-work-area {
+    background: url(assets/img/bg-img/howit.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 115px 0 82px;
+}
+
+.row.it-shape {
+    position: relative;
+    padding-top: 40px;
+}
+
+.row.it-shape:after {
+    position: absolute;
+    content: "";
+    top: -7px;
+    left: 162px;
+    background: url(assets/img/icon/sp.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 10%;
+    margin: auto;
+}
+
+.single-how-it-work {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.how-it-work-icon i {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    line-height: 172px;
+    background: #F5CFCC;
+    font-size: 80px;
+    color: #F02830;
+    border-radius: 100px 100px 100px 0;
+    transition:.5s;
+}
+
+.how-it-work-content h2 {
+    font-size: 22px;
+    padding: 15px 0 12px;
+}
+
+.single-how-it-work:hover .how-it-work-icon i{
+    background:#FF3C00;
+    color:#fff;
+}
